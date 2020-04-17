@@ -1,12 +1,12 @@
 apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
-  name: ingress-resource-1
+  name: registry
 spec:
   rules:
-  - host: nginx.example.com
+  - host: registry.k8s.mylab.local
     http:
       paths:
       - backend:
-          serviceName: nginx-deploy-main
-          servicePort: 80
+          serviceName: registry-docker-registry
+          servicePort: 5000
